@@ -7,14 +7,14 @@ on:
 
 jobs:
   build:
-    name: Publish webextension
+    name: Publish Chrome Web Extension
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          node-version: 12
+          node-version: 16
       - run: yarn --immutable
       - run: yarn format:check
       - run: yarn lint
