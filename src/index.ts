@@ -9,6 +9,9 @@ function updateRatingElement(product: Product) {
 	// Set padding based on what type of page we're on
 	newElement.style.left = document.querySelector('.product-list') ? '0.5rem' : '2rem'
 	newElement.style.padding = '1rem'
+	newElement.style.display = 'inline-block'
+	newElement.style.maxWidth = '6em'
+
 	if (product.stats?.score) {
 		const link = document.createElement('a')
 		link.href = product.stats?.link
