@@ -27,7 +27,7 @@ jobs:
 
       - name: Update theme version number
         if: ${{ steps.semver.outputs.VERSION != '' }}
-        run: sed -i 's/0.0.0-development/${{ steps.semver.outputs.VERSION }}/g' manifest.json
+        run: sed -i 's/0.0.0/${{ steps.semver.outputs.VERSION }}/g' manifest.json
 
       - run: yarn prod
 
