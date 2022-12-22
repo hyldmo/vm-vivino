@@ -3,7 +3,7 @@ import type { RollupOptions } from 'rollup'
 import copy from 'rollup-plugin-copy'
 
 const config: RollupOptions = {
-	input: 'src/index.ts',
+	input: ['src/main.ts', 'src/background.ts', 'src/sort.ts'],
 	output: {
 		sourcemap: true,
 		dir: 'dist',

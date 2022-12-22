@@ -27,6 +27,7 @@ function updateRatingElement(product: Product) {
 }
 
 const wines = new Map<string, Product>()
+window.wines = wines
 
 async function onProductListChange() {
 	const items: HTMLElement[] = Array.from(document.querySelectorAll('.product-item'))

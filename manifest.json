@@ -9,10 +9,17 @@
 		"48": "images/icon-48.png",
 		"128": "images/icon-128.png"
 	},
+	"action": {
+		"default_title": "Sort items by score"
+	},
 	"content_scripts": [
 		{
-			"js": ["index.js"],
+			"js": ["main.js"],
 			"matches": ["https://www.vinmonopolet.no/*"]
 		}
-	]
+	],
+	"permissions": ["activeTab", "scripting"],
+	"background": {
+		"service_worker": "background.js"
+	}
 }
