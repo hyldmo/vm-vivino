@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "VM-Vivino",
-	"version": "1.0",
+	"version": "0.0.0-development",
 	"description": "Add vivino ratings to Vinmonopolets wine pages",
 	"icons": {
 		"16": "images/icon-16.png",
@@ -11,7 +11,7 @@
 	},
 	"content_scripts": [
 		{
-			"js": ["dist/index.js"],
+			"js": ["index.js"],
 			"matches": ["https://www.vinmonopolet.no/*"]
 		}
 	]
