@@ -1,4 +1,3 @@
-import { isPresent } from 'ts-extras'
 import { search } from './search'
 
 interface Product {
@@ -18,7 +17,7 @@ async function onProductListChange() {
 			element: item,
 			title: item.querySelector('.product__name')?.textContent?.trim() as string
 		}))
-		.filter(product => isPresent(product.title))
+		.filter(product => !!product.title)
 
 	for (const product of products) {
 		const wine = await search(product.title)
