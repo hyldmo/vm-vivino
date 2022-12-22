@@ -1,0 +1,19 @@
+{
+	"compilerOptions": {
+		"outDir": "./dist/",
+		"sourceMap": true,
+
+		"strict": true,
+		"importsNotUsedAsValues": "error",
+		"downlevelIteration": true,
+
+		"allowJs": true,
+		"checkJs": false,
+
+		"module": "ES6",
+		"moduleResolution": "Node",
+		"target": "ESNext",
+		"esModuleInterop": true
+	},
+	"include": ["./src/*"]
+}

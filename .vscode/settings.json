@@ -1,0 +1,24 @@
+{
+	"files.associations": {
+		".prettierrc": "yaml",
+		".env": "ini"
+	},
+	"yaml.format.printWidth": 120,
+	"editor.rulers": [120],
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": false,
+	"editor.codeActionsOnSave": [
+		"source.organizeImports", // Follow https://github.com/microsoft/TypeScript/issues/43141 for update on not sorting
+		"source.formatDocument", // Requires rohit-gohri.format-code-action
+		"source.fixAll.eslint"
+	],
+	"eslint.packageManager": "yarn",
+	"eslint.rules.customizations": [
+		{
+			"rule": "*",
+			"severity": "downgrade"
+		}
+	],
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"prettier.ignorePath": ".gitignore"
+}

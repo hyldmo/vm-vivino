@@ -1,0 +1,16 @@
+useTabs: true
+tabWidth: 4
+printWidth: 120
+bracketSameLine: false
+
+semi: false
+trailingComma: none
+singleQuote: true
+quoteProps: preserve
+arrowParens: avoid
+
+overrides:
+  - files: ['*.yml', '.prettierrc']
+    options:
+      useTabs: false
+      tabWidth: 2
