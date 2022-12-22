@@ -1,15 +1,5 @@
 import { search } from './search'
-
-interface Product {
-	index: number
-	element: HTMLElement
-	title: string | null | undefined
-	stats?: {
-		rating: number
-		link: string
-		year: number | null
-	}
-}
+import type { Product } from './types'
 
 function updateRatingElement(product: Product) {
 	const ratingElement = product.element.querySelector('.product__rating')
@@ -19,11 +9,11 @@ function updateRatingElement(product: Product) {
 	// Set padding based on what type of page we're on
 	newElement.style.left = document.querySelector('.product-list') ? '0.5rem' : '2rem'
 	newElement.style.padding = '1rem'
-	if (product.stats?.rating) {
+	if (product.stats?.score) {
 		const link = document.createElement('a')
 		link.href = product.stats?.link
 		link.target = '_blank'
-		link.innerText = `${product.stats?.rating} / 5 ⭐️`
+		link.innerText = `${product.stats?.score} / 5 ⭐️`
 		newElement.appendChild(link)
 	} else {
 		newElement.innerText = 'Ingen vurdering funnet'
@@ -65,7 +55,8 @@ async function onProductListChange() {
 				const lastWord = product.title.split(' ').pop()
 				const year = lastWord?.match(/^\d+$/) ? Number.parseInt(lastWord, 10) : null
 				const stats: Product['stats'] = {
-					rating: data.statistics.ratings_average,
+					score: data.statistics.ratings_average,
+					ratingsCount: data.statistics.ratings_count,
 					year,
 					link: `https://www.vivino.com/${data.seo_name}/w/${data.id}${year ? `?year=${year}` : ''}`
 				}

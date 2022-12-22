@@ -1,0 +1,59 @@
+<svg viewBox="0 0 160 160" version="1.1" id="svg_null">
+	<g id="root" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		<rect id="background.accent" fill="#8d0033" x="0" y="0" width="160" height="160"></rect>
+		<g id="group" transform="translate(12.000000, 106.000000)">
+			<rect id="Rectangle" x="0" y="0" width="136" height="21"></rect>
+			<text
+				id="headerText.primary"
+				font-family="Halant"
+				font-size="18"
+				font-weight="500"
+				letter-spacing=".81"
+				fill="#fdc8aa"
+				data-text-alignment="C"
+				font-style="normal"
+			>
+				<tspan x="54.08591079711914" y="17">VM</tspan>
+			</text>
+		</g>
+		<rect id="icon.primary" x="70" y="57" width="20" height="20" display="none" fill="#fdc8aa"></rect>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink"
+			viewBox="0 0 26 26"
+			version="1.1"
+			fill="#fdc8aa"
+			id="svg_icon.primary"
+			x="70"
+			y="57"
+			width="20"
+			height="20"
+		>
+			<g id="surface1">
+				<path
+					style=""
+					d="M 15 7 L 15 1 C 15 0.449219 14.554688 0 14 0 L 12 0 C 11.445313 0 11 0.449219 11 1 L 11 7 C 11 7 8 7.597656 8 11 L 8 25 C 8 25.554688 8.445313 26 9 26 L 17 26 C 17.554688 26 18 25.554688 18 25 L 18 11 C 18 7.597656 15 7 15 7 Z M 16 15 L 11 15 L 11 16 L 16 16 L 16 22 L 11 22 L 11 24 L 10 24 L 10 11 C 10 8.679688 12.5 8.28125 12.5 8.28125 C 12.5 8.28125 11 9.226563 11 11 L 11 13 L 16 13 Z "
+				></path>
+			</g>
+		</svg>
+		<path
+			d="M109.565 37.435c0.423 0.422 0.423 1.107 0 1.529l-17.588 17.588c-0.422 0.422 -1.107 0.422 -1.529 0c-0.422 -0.422 -0.422 -1.107 0 -1.53l17.588 -17.587c0.422 -0.423 1.107 -0.423 1.53 0zm-59.13 0c0.422 -0.423 1.107 -0.423 1.529 0l17.588 17.588c0.422 0.422 0.422 1.107 0 1.529c-0.422 0.422 -1.107 0.422 -1.53 0l-17.587 -17.588c-0.423 -0.422 -0.423 -1.107 0 -1.53zm0 59.13c-0.423 -0.422 -0.423 -1.107 0 -1.529l17.588 -17.588c0.422 -0.422 1.107 -0.422 1.529 0c0.422 0.422 0.422 1.107 0 1.53l-17.588 17.587c-0.422 0.423 -1.107 0.423 -1.53 0zm59.13 0c-0.422 0.423 -1.107 0.423 -1.529 0l-17.588 -17.588c-0.422 -0.422 -0.422 -1.107 0 -1.529c0.422 -0.422 1.107 -0.422 1.53 0l17.587 17.588c0.423 0.422 0.423 1.107 0 1.53z"
+			id="shape.primary"
+			fill="#fdc8aa"
+		></path>
+		<path
+			d="M100.194 64.072l0 8.024l7.88 0l0 -8.024l-7.88 0zm0 -2.006l7.88 0c1.089 0 1.97 0.898 1.97 2.006l0 8.024c0 1.107 -0.881 2.005 -1.97 2.005l-7.88 0c-1.088 0 -1.97 -0.898 -1.97 -2.005l0 -8.024c0 -1.108 0.882 -2.006 1.97 -2.006z"
+			id="shape.primary"
+			fill="#fdc8aa"
+			fill-rule="nonzero"
+			transform="translate(104.134328, 68.083582) rotate(45.000000) translate(-104.134328, -68.083582)"
+		></path>
+		<path
+			d="M51.925 64.072l0 8.024l7.881 0l0 -8.024l-7.88 0zm0 -2.006l7.881 0c1.088 0 1.97 0.898 1.97 2.006l0 8.024c0 1.107 -0.882 2.005 -1.97 2.005l-7.88 0c-1.089 0 -1.97 -0.898 -1.97 -2.005l0 -8.024c0 -1.108 0.881 -2.006 1.97 -2.006z"
+			id="shape.primary"
+			fill="#fdc8aa"
+			fill-rule="nonzero"
+			transform="translate(55.865672, 68.083582) rotate(45.000000) translate(-55.865672, -68.083582)"
+		></path>
+	</g>
+</svg>
