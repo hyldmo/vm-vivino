@@ -1,4 +1,4 @@
-#vm-vivino
+# vm-vivino
 
 Chrome extension for viewing Vivino ratings on vinmonopolet.no
 
