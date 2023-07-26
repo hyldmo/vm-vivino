@@ -20,6 +20,6 @@ module.exports = {
 			}
 		],
 		'@semantic-release/release-notes-generator',
-		['@semantic-release/github', { assets: [{ path: 'dist/release.zip', label: 'Dist' }] }]
+		['@semantic-release/github', { assets: [{ path: 'dist/release.zip', label: 'Package' }] }]
 	]
 }

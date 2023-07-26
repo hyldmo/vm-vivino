@@ -26,24 +26,24 @@ jobs:
       - name: Get version number
         id: semver
         run: ./scripts/semver.sh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Update theme version number
         if: ${{ steps.semver.outputs.VERSION != '' }}
         run: sed -i 's/0.0.0/${{ steps.semver.outputs.VERSION }}/g' manifest.json
 
       - run: yarn prod
+        if: ${{ steps.semver.outputs.VERSION != '' }}
 
       - run: zip -r release.zip *
+        if: ${{ steps.semver.outputs.VERSION != '' }}
         working-directory: dist
 
       - run: yarn release
+        if: ${{ steps.semver.outputs.VERSION != '' }}
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - uses: actions/upload-artifact@v3
-        with:
-          name: dist
-          path: dist/release.zip
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload & release
         uses: mnao305/chrome-extension-upload@v4.0.0
