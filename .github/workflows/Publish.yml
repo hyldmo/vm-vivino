@@ -36,20 +36,21 @@ jobs:
       - run: yarn prod
         if: ${{ steps.semver.outputs.VERSION != '' }}
 
-      - run: zip -r release.zip *
+      - run: zip -r release-${{ steps.semver.outputs.VERSION }}.zip *
         if: ${{ steps.semver.outputs.VERSION != '' }}
         working-directory: dist
 
       - run: yarn release
         if: ${{ steps.semver.outputs.VERSION != '' }}
         env:
+          VERSION: ${{ steps.semver.outputs.VERSION }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload & release
         uses: mnao305/chrome-extension-upload@v4.0.0
         if: ${{ steps.semver.outputs.VERSION != '' }}
         with:
-          file-path: dist/release.zip
+          file-path: dist/release-${{ steps.semver.outputs.VERSION }}.zip
           extension-id: pjegkjcbjfoldlpcbjniaceihlkjdkeg
           client-id: ${{ secrets.CLIENT_ID }}
           client-secret: ${{ secrets.CLIENT_SECRET }}
