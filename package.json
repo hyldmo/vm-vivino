@@ -12,7 +12,6 @@
 		"format:check": "prettier --check . --ignore-path .gitignore",
 		"release": "semantic-release --config ./release.config.js"
 	},
-	"dependencies": {},
 	"devDependencies": {
 		"@commitlint/cli": "^16.0.0",
 		"@commitlint/config-conventional": "^16.0.0",
@@ -34,5 +33,6 @@
 		"extends": [
 			"@commitlint/config-conventional"
 		]
-	}
+	},
+	"packageManager": "yarn@3.6.1"
 }
