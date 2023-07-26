@@ -1,6 +1,6 @@
 {
 	"manifest_version": 3,
-	"name": "VM-Vivino",
+	"name": "Vivino ratings for Vinmonopolet",
 	"version": "0.0.0",
 	"description": "Add vivino ratings to Vinmonopolets wine pages",
 	"icons": {
