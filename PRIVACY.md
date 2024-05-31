@@ -1,5 +1,3 @@
-Sure, here is the revised privacy policy:
-
 Privacy Policy
 
 This privacy policy applies to the Vivino Chrome extension, which is a tool that allows users to pull data from Vivino, a wine rating and review website.
