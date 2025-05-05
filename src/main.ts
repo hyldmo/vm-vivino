@@ -11,6 +11,7 @@ function updateRatingElement(product: Product) {
 	newElement.style.padding = '1rem'
 	newElement.style.display = 'inline-block'
 	newElement.style.maxWidth = '6em'
+	newElement.style.whiteSpace = 'nowrap'
 
 	if (product.stats?.score) {
 		const link = document.createElement('a')
