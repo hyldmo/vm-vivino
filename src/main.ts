@@ -1,13 +1,22 @@
 import { search } from './search'
 import type { Product } from './types'
 
+const selectors = {
+	productList: '.product-list',
+	productItem: '.product-item',
+	productName: '.product__name',
+	productDetails: '.product-details-main',
+	productRating: '.product__rating',
+	cartItem: '[id^="cartEntryCode"]'
+} as const
+
 function updateRatingElement(product: Product) {
-	const ratingElement = product.element.querySelector('.product__rating')
+	const ratingElement = product.element.querySelector(selectors.productRating)
 	if (ratingElement) return ratingElement
 	const newElement = document.createElement('div')
 	newElement.classList.add('product__rating', 'product-tools')
 	// Set padding based on what type of page we're on
-	newElement.style.left = document.querySelector('.product-list') ? '0.5rem' : '2rem'
+	newElement.style.left = document.querySelector(selectors.productList) ? '0.5rem' : '2rem'
 	newElement.style.padding = '1rem'
 	newElement.style.display = 'inline-block'
 	newElement.style.maxWidth = '6em'
@@ -31,19 +40,26 @@ const wines = new Map<string, Product>()
 window.wines = wines
 
 async function onProductListChange() {
-	const items: HTMLElement[] = Array.from(document.querySelectorAll('.product-item'))
+	const items: HTMLElement[] = Array.from(document.querySelectorAll(selectors.productItem))
+	const cartItems: HTMLElement[] = Array.from(document.querySelectorAll(selectors.cartItem))
 	const products: Product[] = items.length
 		? items.map((item, i) => ({
 				index: i,
 				element: item,
-				title: item.querySelector('.product__name')?.textContent?.trim()
+				title: item.querySelector(selectors.productName)?.textContent?.trim()
 		  }))
-		: document.querySelector('.product__details--top')
+		: cartItems.length
+		? cartItems.map((item, i) => ({
+				index: i,
+				element: item,
+				title: item.querySelector('h3')?.textContent?.trim()
+		  }))
+		: document.querySelector(selectors.productDetails)
 		? [
 				{
 					index: 0,
-					element: document.querySelector('.product__details--top') as HTMLElement,
-					title: document.querySelector('.product__name')?.textContent?.trim()
+					element: document.querySelector(selectors.productDetails) as HTMLElement,
+					title: document.querySelector(selectors.productName)?.textContent?.trim()
 				}
 		  ]
 		: []
@@ -78,12 +94,20 @@ async function onProductListChange() {
 const interval = setInterval(waitForProducts, 100)
 
 function waitForProducts() {
-	const listElement = document.querySelector('.product-list')
-	if (listElement?.querySelector('.product-item')) {
+	const listElement = document.querySelector(selectors.productList)
+	if (listElement?.querySelector(selectors.productItem)) {
 		const observer = new MutationObserver(onProductListChange)
 		observer.observe(listElement, { childList: true })
-	} else if (document.querySelector('.product__details--top')) {
-		// TODO
+	} else if (document.querySelector(selectors.productDetails)) {
+		// Product detail page - no observer needed
+	} else if (document.querySelector(selectors.cartItem)) {
+		// Cart page - observe parent list for changes
+		const cartItem = document.querySelector(selectors.cartItem)
+		const cartList = cartItem?.parentElement
+		if (cartList) {
+			const observer = new MutationObserver(onProductListChange)
+			observer.observe(cartList, { childList: true })
+		}
 	} else return
 	clearInterval(interval)
 	onProductListChange()
