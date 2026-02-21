@@ -17,6 +17,9 @@ function updateRatingElement(product: Product) {
 	newElement.classList.add('product__rating', 'product-tools')
 	// Set padding based on what type of page we're on
 	newElement.style.left = document.querySelector(selectors.productList) ? '0.5rem' : '2rem'
+	if (document.querySelector(selectors.cartItem)) {
+		newElement.style.top = '0.5rem'
+	}
 	newElement.style.padding = '1rem'
 	newElement.style.display = 'inline-block'
 	newElement.style.maxWidth = '6em'
