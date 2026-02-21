@@ -10,14 +10,20 @@ const selectors = {
 	cartItem: '[id^="cartEntryCode"]'
 } as const
 
+function getPage() {
+	const page = Object.entries(selectors).find(([, value]) => document.querySelector(value))?.[0] ?? 'unknown'
+	return page as keyof typeof selectors | 'unknown'
+}
+
 function updateRatingElement(product: Product) {
 	const ratingElement = product.element.querySelector(selectors.productRating)
 	if (ratingElement) return ratingElement
 	const newElement = document.createElement('div')
 	newElement.classList.add('product__rating', 'product-tools')
+	const page = getPage()
 	// Set padding based on what type of page we're on
-	newElement.style.left = document.querySelector(selectors.productList) ? '0.5rem' : '2rem'
-	if (document.querySelector(selectors.cartItem)) {
+	newElement.style.left = ['productList', 'productDetails'].includes(page) ? '0.5rem' : '2rem'
+	if (['cartItem', 'productDetails'].includes(page)) {
 		newElement.style.top = '0.5rem'
 	}
 	newElement.style.padding = '1rem'
